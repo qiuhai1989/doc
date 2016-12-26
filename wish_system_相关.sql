@@ -11,7 +11,7 @@ drop table if exists sys_admin_user;
 /*==============================================================*/
 create table sys_admin_user
 (
-   id                   int not null auto_increment,
+   id                   bigint not null auto_increment,
    name                 varchar(50),
    mobile               varchar(50),
    pwd                  varchar(50),
