@@ -46,8 +46,8 @@ CREATE TABLE `sys_log_audit` (
 
 
 insert into sys_log_audit_template (id,description,type_id,type_name,module_id,module_name,title_template,detail_template,show_flag,create_date,update_date)
-values(1000,'红包-新增',2,'新增',1,'红包模块','"${user.username}"上线了"${afterData.wishing}"活动','"${user.username}"上线了"${afterData.wishing}"活动',true,now(),now());
+values(1000,'红包-新增',2,'新增',1,'红包模块','"${user.userName}"上线了"${afterData.wishing}"活动','"${user.userName}"上线了"${afterData.wishing}"活动',true,now(),now());
 
 insert into sys_log_audit_template (id,description,type_id,type_name,module_id,module_name,title_template,detail_template,show_flag,create_date,update_date)
-values(2000,'管理员-新增',2,'新增',2,'系统管理模块','"${user.username}"新增了管理员"${afterData.name}"','"${user.username}"新增了管理员"${afterData.name}"',true,now(),now());
+values(2000,'管理员-新增',2,'新增',2,'系统管理模块','"${user.userName}"新增了管理员"${afterData.name}"','"${user.userName}"新增了管理员"${afterData.name}"',true,now(),now());
 
