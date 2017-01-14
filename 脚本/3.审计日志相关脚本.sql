@@ -1,6 +1,8 @@
 
+drop table if exists sys_log_audit_template;
+
 CREATE TABLE `sys_log_audit_template` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '模板ID',
+  `id` bigint(20) NOT NULL COMMENT '模板ID',
   `description` varchar(256) DEFAULT NULL COMMENT '模板描述',
   `type_id` varchar(24) NOT NULL COMMENT '操作类型ID',
   `type_name` varchar(24) NOT NULL COMMENT '操作类型名称',
@@ -14,6 +16,7 @@ CREATE TABLE `sys_log_audit_template` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='审计日志模板表';
 
+drop table if exists sys_log_audit;
 
 CREATE TABLE `sys_log_audit` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -42,6 +45,9 @@ CREATE TABLE `sys_log_audit` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1422 DEFAULT CHARSET=utf8 COMMENT='审计日志';
 
 
-insert into sys_log_audit_template (description,type_id,type_name,module_id,module_name,title_template,detail_template,show_flag,create_date,update_date)
-values('红包-新增',2,'新增',1,'未知','"${user.username}"上线了"${afterData.wishing}"活动','"${user.username}"上线了"${afterData.wishing}"活动',true,now(),now());
+insert into sys_log_audit_template (id,description,type_id,type_name,module_id,module_name,title_template,detail_template,show_flag,create_date,update_date)
+values(1000,'红包-新增',2,'新增',1,'红包模块','"${user.userName}"上线了"${afterData.wishing}"活动','"${user.userName}"上线了"${afterData.wishing}"活动',true,now(),now());
+
+insert into sys_log_audit_template (id,description,type_id,type_name,module_id,module_name,title_template,detail_template,show_flag,create_date,update_date)
+values(2000,'管理员-新增',2,'新增',2,'系统管理模块','"${user.userName}"新增了管理员"${afterData.name}"','"${user.userName}"新增了管理员"${afterData.name}"',true,now(),now());
 
