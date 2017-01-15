@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2017/1/15 0:02:12                            */
+/* Created on:     2017/1/15 12:07:55                           */
 /*==============================================================*/
 
 
@@ -12,6 +12,7 @@ drop table if exists match_info;
 create table match_info
 (
    id                   bigint not null auto_increment,
+   match_type           varchar(20) comment '联赛名称',
    home_team_name       varchar(100) comment '主队名称',
    guest_team_name      varchar(100) comment '客队名称',
    home_team_img        varchar(200) comment '主队图片',
