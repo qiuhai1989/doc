@@ -21,7 +21,7 @@ create table match_info
    begin_time           timestamp comment '比赛时间',
    status               int(2) comment '比赛状态：0未开始，1延期，2取消，3进行中，4已结束',
    create_time          timestamp comment '创建时间',
-   modify_tie           timestamp comment '修改时间',
+   modify_time           timestamp comment '修改时间',
    primary key (id)
 );
 
