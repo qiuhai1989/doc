@@ -30,3 +30,9 @@ create table match_info
 
 alter table match_info comment '赛事对阵信息';
 
+
+-- 定时相关
+INSERT INTO `cms_schedule_task_job` (`job_name`, `job_group`, `job_status`, `cron_expression`, `description`, `bean_class`, `is_concurrent`, `spring_id`, `method_name`, `created`, `updated`) VALUES ( 'match', 'spider', '1', '0 0 1 * * ?', '抓取直播吧赛事信息', 'com.hai.demo.schedule.schedule.SpiderSchedule', '1', 'spiderSchedule', 'matchFech', '2016-11-20', '2016-11-20');
+
+
+INSERT INTO `cms_schedule_task_job` (`job_name`, `job_group`, `job_status`, `cron_expression`, `description`, `bean_class`, `is_concurrent`, `spring_id`, `method_name`, `created`, `updated`) VALUES ( 'match', 'spider', '1', '0 0/1 * * * ?', '抓取直播吧比分信息', 'com.hai.demo.schedule.schedule.SpiderSchedule', '1', 'spiderSchedule', 'bfFech', '2016-11-20', '2016-11-20');
