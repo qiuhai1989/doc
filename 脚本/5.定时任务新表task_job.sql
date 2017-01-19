@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `task_job`;
 CREATE TABLE `task_job` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `job_name` varchar(100) DEFAULT NULL COMMENT '任务标识',
   `job_group` varchar(100) DEFAULT NULL COMMENT '所属组标识',
   `job_status` varchar(1) DEFAULT NULL COMMENT '状态0不可用1可用',
@@ -38,6 +38,6 @@ CREATE TABLE `task_job` (
 -- ----------------------------
 -- Records of task_job
 -- ----------------------------
-INSERT INTO `task_job` VALUES ('1', 'demo', 'test', '0', '0/5 * * * * ?', '测试', 'com.hai.demo.schedule.schedule.DemoSchedule', '1', 'demoSchedule', 'test', '2016-11-20 00:00:00', '2016-11-20 00:00:00');
-INSERT INTO `task_job` VALUES ('2', 'match', 'spider', '0', '0 0 1 * * ?', '抓取直播吧赛事信息', 'com.hai.demo.schedule.schedule.SpiderSchedule', '1', 'spiderSchedule', 'matchFech', '2016-11-20 00:00:00', '2016-11-20 00:00:00');
-INSERT INTO `task_job` VALUES ('3', 'match', 'spider', '0', '0 0/1 * * * ?', '抓取直播吧比分信息', 'com.hai.demo.schedule.schedule.SpiderSchedule', '1', 'spiderSchedule', 'bfFech', '2016-11-20 00:00:00', '2016-11-20 00:00:00');
+INSERT INTO `task_job` VALUES ('1', 'demo', 'test', '1', '0/5 * * * * ?', '测试', 'com.hai.demo.schedule.schedule.DemoSchedule', '1', 'demoSchedule', 'test', '2016-11-20 00:00:00', '2016-11-20 00:00:00');
+INSERT INTO `task_job` VALUES ('2', 'match', 'spider', '1', '0 0 1 * * ?', '抓取直播吧赛事信息', 'com.hai.demo.schedule.schedule.SpiderSchedule', '1', 'spiderSchedule', 'matchFech', '2016-11-20 00:00:00', '2016-11-20 00:00:00');
+INSERT INTO `task_job` VALUES ('3', 'match', 'spider', '1', '0 0/1 * * * ?', '抓取直播吧比分信息', 'com.hai.demo.schedule.schedule.SpiderSchedule', '1', 'spiderSchedule', 'bfFech', '2016-11-20 00:00:00', '2016-11-20 00:00:00');
